@@ -1,0 +1,27 @@
+{
+  "name": "doodlekitchat",
+  "version": "1.0.0",
+  "description": "chat server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentchung/doodlekitChat.git"
+  },
+  "author": "vincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincentchung/doodlekitChat/issues"
+  },
+  "homepage": "https://github.com/vincentchung/doodlekitChat#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dependable": "^1.1.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-promise-router": "^2.0.0",
+    "lodash": "^4.17.4"
+  }
+}
