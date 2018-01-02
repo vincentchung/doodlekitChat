@@ -13,7 +13,7 @@ const passport = require('passport');
 const container = require('./container');
 
 
-container.resolve(function(users){
+container.resolve(function(users, _){
 
   mongoose.Promise = global.Promise;
   mongoose.connect('mongodb://localhost/doodlekitchat',{useMongoclient:true});
@@ -46,15 +46,19 @@ container.resolve(function(users){
     app.use(bodyParser.urlencoded({extended: true}));
 
     app.use(validator());
+
     app.use(session(
       {secret: 'thisisasecretkey',
       resave:true,
       saveInitialized: true,
+      saveUninitialized: true,
     store: new MongoStore({mongooseConnection: mongoose.connection})}
   ));
     app.use(flash());
 
     app.use(passport.initialize());
     app.use(passport.session());
+
+    app.locals._ = _;
   }
 });
